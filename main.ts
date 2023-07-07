@@ -1,9 +1,9 @@
 import './style.css'
 import viteLogo from '/vite.svg'
-import { setupCounterJS } from './counter.js'
-import { setupCounterTS } from './counter.ts'
+import { setupCounterJS } from './counter-js.js'
+import { setupCounterTS } from './counter'
 
-document.querySelector('#app').innerHTML = `
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
     <a href="https://vitejs.dev" target="_blank">
       <img src="${viteLogo}" class="logo" alt="Vite logo" />
@@ -22,4 +22,4 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounterJS(document.querySelector('#counter-js'))
-setupCounterTS(document.querySelector('#counter-ts'))
+setupCounterTS(document.querySelector<HTMLButtonElement>('#counter-ts')!)
